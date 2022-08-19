@@ -1,0 +1,8 @@
+name: RiftEssentials
+version: '${version}'
+main: me.catto.rift.riftessentials.RiftEssentials
+api-version: 1.19
+load: STARTUP
+authors: [ Catto ]
+description: Essential Plugins, Custom Coded For RiftSMP because holy fuck i hate the uselessness of public ones
+website: postman2.silverlune.com

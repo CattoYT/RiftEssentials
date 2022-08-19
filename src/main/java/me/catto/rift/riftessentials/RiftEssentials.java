@@ -31,6 +31,6 @@ public final class RiftEssentials extends JavaPlugin {
 
         getLogger().info("RiftEssentials: Saving Config!");
         this.saveDefaultConfig();
-        getLogger().info("RiftEssentials: Config Saved!");
+        getLogger().info("RiftEssentials: Saving Config!");
     }
 }

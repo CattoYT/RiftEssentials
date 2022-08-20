@@ -6,3 +6,11 @@ load: STARTUP
 authors: [ Catto ]
 description: Essential Plugins, Custom Coded For RiftSMP because holy fuck i hate the uselessness of public ones
 website: postman2.silverlune.com
+
+
+# Replace "kit" with the name of your command.
+commands:
+  Launch:
+    description: Haha Y Velocity Go BRRRR
+    usage: /Launch
+    permission: RiftEssentials.MemeCmds

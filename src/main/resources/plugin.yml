@@ -14,3 +14,9 @@ commands:
     description: Haha Y Velocity Go BRRRR
     usage: /Launch
     permission: RiftEssentials.MemeCmds
+  Minecart:
+    description: Grants a player a minecart
+    usage: /minecart
+  Boat:
+    description: Grants a player a boat
+    usage: /boat

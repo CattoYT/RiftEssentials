@@ -15,6 +15,8 @@ public class BowBoost implements Listener {
 
         if (entity.getType() == EntityType.PLAYER && !(event.getForce() > 0.14666666f)) {
 
+
+            event.getProjectile().remove();
             entity.damage(0.1D, entity);
             entity.setVelocity(entity.getLocation().getDirection().multiply(2).setY(0));
 

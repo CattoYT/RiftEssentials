@@ -20,3 +20,6 @@ commands:
   Boat:
     description: Grants a player a boat
     usage: /boat
+  ClearBlocks:
+    description: Clears blocks in scaffold area
+    permission: RiftEssentials.admin

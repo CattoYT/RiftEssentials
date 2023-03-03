@@ -1,8 +1,10 @@
 package me.catto.rift.riftessentials;
 
 import me.catto.rift.riftessentials.events.eventListener;
+import me.catto.rift.riftessentials.modules.BlockClearer.ClearBlocks;
 import me.catto.rift.riftessentials.modules.commands.Boat;
 import me.catto.rift.riftessentials.modules.commands.Minecart;
+
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -45,6 +47,8 @@ public final class RiftEssentials extends JavaPlugin {
 
         this.getCommand("minecart").setExecutor(new Minecart());
         this.getCommand("boat").setExecutor(new Boat());
+        this.getCommand("clearblocks").setExecutor(new ClearBlocks());
+
     }
 
     private void createConfig() {

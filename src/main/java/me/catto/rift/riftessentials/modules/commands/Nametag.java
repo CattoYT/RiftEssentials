@@ -11,7 +11,7 @@ import org.bukkit.inventory.ItemStack;
 import java.util.HashMap;
 import java.util.UUID;
 
-public class Boat implements CommandExecutor {
+public class Nametag implements CommandExecutor {
 
     private final HashMap<UUID, Long> cooldown = new HashMap<>();
 
@@ -23,7 +23,7 @@ public class Boat implements CommandExecutor {
             if (!this.cooldown.containsKey(player.getUniqueId())) {
                 this.cooldown.put(player.getUniqueId(), System.currentTimeMillis());
 
-                ItemStack boat = new ItemStack(Material.OAK_BOAT);
+                ItemStack boat = new ItemStack(Material.NAME_TAG);
 
                 player.getInventory().addItem(boat);
 
@@ -35,7 +35,7 @@ public class Boat implements CommandExecutor {
                 if (timeElapsed > 300000) {
                     this.cooldown.put(player.getUniqueId(), System.currentTimeMillis());
 
-                    ItemStack boat = new ItemStack(Material.OAK_BOAT);
+                    ItemStack boat = new ItemStack(Material.NAME_TAG);
 
                     player.getInventory().addItem(boat);
 

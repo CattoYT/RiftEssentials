@@ -15,10 +15,10 @@ public class Nicknames implements Listener {
     public void onPlayerJoin(PlayerJoinEvent e) {
         Player p = e.getPlayer();
 
-        if(p.getName().equals("Juul_Client")) {
-            p.setDisplayName("Server");
-            getLogger().info("Admin Joined The Game, Changing Name..");
-            p.sendMessage("Hi Admin");
+        if(p.getName().equals("CattoYT")) {
+            p.setDisplayName("Rift Admin");
+            getLogger().info("§dAdmin Joined The Game, Changing Name..");
+            p.sendMessage("§dHi Admin");
         }
     }
 }

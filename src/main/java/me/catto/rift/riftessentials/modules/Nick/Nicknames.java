@@ -1,6 +1,5 @@
 package me.catto.rift.riftessentials.modules.Nick;
 
-import me.catto.rift.riftessentials.RiftEssentials;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

@@ -11,10 +11,13 @@ import org.bukkit.inventory.ItemStack;
 import java.util.HashMap;
 import java.util.UUID;
 
-public class Minecart implements CommandExecutor {
+public class BookQuill implements CommandExecutor {
+
+
+
+
 
     private final HashMap<UUID, Long> cooldown = new HashMap<>();
-
 
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
@@ -24,24 +27,29 @@ public class Minecart implements CommandExecutor {
             if (!this.cooldown.containsKey(player.getUniqueId())) {
                 this.cooldown.put(player.getUniqueId(), System.currentTimeMillis());
 
-                ItemStack Minecart = new ItemStack(Material.MINECART);
 
-                player.getInventory().addItem(Minecart);
 
-                player.sendMessage(ChatColor.AQUA + "[RiftEssentials] " + ChatColor.GOLD + "Don't exploit this!");
+                ItemStack BookQuill = new ItemStack(Material.LEGACY_BOOK_AND_QUILL);
+
+                player.getInventory().addItem(BookQuill);
+
+                player.sendMessage(ChatColor.AQUA + "[RiftEssentials] " + ChatColor.GOLD + "Don't exploit this");
             }
             else {
                 long timeElapsed = System.currentTimeMillis() - cooldown.get(player.getUniqueId());
 
-                if (timeElapsed > 600000) {
+                if (timeElapsed > 300000) {
                     this.cooldown.put(player.getUniqueId(), System.currentTimeMillis());
 
-                    ItemStack Minecart = new ItemStack(Material.MINECART);
+                    ItemStack BookQuill = new ItemStack(Material.LEGACY_BOOK_AND_QUILL);
 
-                    player.getInventory().addItem(Minecart);
+                    player.getInventory().addItem(BookQuill);
 
-                    player.sendMessage(ChatColor.AQUA + "[RiftEssentials] " + ChatColor.GOLD + "Don't exploit this!");
+                    player.sendMessage(ChatColor.AQUA + "[RiftEssentials] " + ChatColor.GOLD + "Don't exploit this");
 
+                }
+                else {
+                    player.sendMessage("§6You can't use this command for another 10 minutes!");
                 }
             }
 

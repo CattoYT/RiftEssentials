@@ -3,10 +3,7 @@ package me.catto.rift.riftessentials.modules.commands;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import org.bukkit.command.ConsoleCommandSender;
-import org.bukkit.entity.Player;
 
-import java.io.Console;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 

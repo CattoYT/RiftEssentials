@@ -11,8 +11,9 @@ import org.bukkit.inventory.ItemStack;
 import java.util.HashMap;
 import java.util.UUID;
 
-public class Nametag implements CommandExecutor {
+import static org.bukkit.Bukkit.getLogger;
 
+public class Nametag implements CommandExecutor {
     private final HashMap<UUID, Long> cooldown = new HashMap<>();
 
     @Override
@@ -22,6 +23,8 @@ public class Nametag implements CommandExecutor {
 
             if (!this.cooldown.containsKey(player.getUniqueId())) {
                 this.cooldown.put(player.getUniqueId(), System.currentTimeMillis());
+
+
 
                 ItemStack boat = new ItemStack(Material.NAME_TAG);
 
@@ -51,4 +54,5 @@ public class Nametag implements CommandExecutor {
         }
         return true;
     }
+
 }

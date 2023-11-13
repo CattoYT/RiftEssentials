@@ -1,7 +1,7 @@
-name: RiftEssentials
-version: '${version}'
+name: RiftEssentialsPaper
+version: '${project.version}'
 main: me.catto.rift.riftessentials.RiftEssentials
-api-version: 1.20.1
+api-version: '1.20'
 load: STARTUP
 authors: [ Catto ]
 description: Essential Plugins, Custom Coded For RiftSMP because holy fuck i hate the uselessness of public ones
@@ -10,19 +10,26 @@ website: postman2.silverlune.com
 
 # Replace "kit" with the name of your command.
 commands:
-  Launch:
-    description: Haha Y Velocity Go BRRRR
-    usage: /Launch
-    permission: RiftEssentials.MemeCmds
-  Minecart:
+
+  minecart:
     description: Grants a player a minecart
     usage: /minecart
-  Boat:
+    permission: RiftEssentials.give
+  boat:
     description: Grants a player a boat
     usage: /boat
-  Nametag:
-    description: Grants a player a boat
+    permission: RiftEssentials.give
+  nametag:
+    description: Grants a player a nametag
     usage: /nametag
+    permission: RiftEssentials.give
   ClearBlocks:
     description: Clears blocks in scaffold area
     permission: RiftEssentials.admin
+  book:
+    description: Grants a player a nametag
+    usage: /book
+    permission: RiftEssentials.give
+  version:
+    description: Shows plugin version
+    usage: /version

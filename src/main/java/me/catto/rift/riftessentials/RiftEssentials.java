@@ -3,17 +3,13 @@ package me.catto.rift.riftessentials;
 import me.catto.rift.riftessentials.events.eventListener;
 import me.catto.rift.riftessentials.modules.BlockClearer.ClearBlocks;
 import me.catto.rift.riftessentials.modules.BowBoost.BowBoost;
+import me.catto.rift.riftessentials.modules.TabCompleter.RiftEssentialsTabCompleter;
 import me.catto.rift.riftessentials.modules.commands.*;
-import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
-
-import java.net.InetAddress;
-import java.net.UnknownHostException;
 
 
 public final class RiftEssentials extends JavaPlugin {
 
-    FileConfiguration config = this.getConfig();
 
 
 
@@ -24,10 +20,12 @@ public final class RiftEssentials extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new BowBoost(), this);
         //create message in server console saying that the plugin has been enabled
         getLogger().info("RiftEssentials has been enabled!");
-        this.getConfig();
+
+        configManager(true);
 
         //register commands
         getLogger().info("RiftEssentials: Registering commands!");
+
 
         getCommand("book").setExecutor(new BookQuill());
         getCommand("nametag").setExecutor(new Nametag());
@@ -35,16 +33,30 @@ public final class RiftEssentials extends JavaPlugin {
         getCommand("boat").setExecutor(new Boat());
         getCommand("clearblocks").setExecutor(new ClearBlocks());
         getCommand("version").setExecutor(new DebugVer());
+        getCommand("riftessentials").setExecutor(new RiftEssentialsCmds());
 
+        getCommand("riftessentials").setTabCompleter(new RiftEssentialsTabCompleter());
+
+
+    }
+
+    private void configManager(boolean StartUp) {
+
+        if (StartUp) {
+            saveDefaultConfig();
+            BowBoost.setBowVelocity(getConfig().getDouble("bowBoostVelocity"));
+        }
+        else {
+            getConfig().set("bowBoostVelocity", BowBoost.getBowVelocity());
+            saveConfig();
+        }
     }
 
     @Override
     public void onDisable() {
         // Plugin shutdown logic
         getLogger().info("RiftEssentials has been shut down!");
-
-        getLogger().info("RiftEssentials: Saving Config!");
-        this.saveDefaultConfig();
+        configManager(false);
     }
 
     //register your fucking commands here

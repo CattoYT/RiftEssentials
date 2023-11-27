@@ -8,6 +8,17 @@ import org.bukkit.event.entity.EntityShootBowEvent;
 
 public class BowBoost implements Listener {
 
+    public static double getBowVelocity() {
+        return bowVelocity;
+    }
+
+    private static double bowVelocity = 1.6;
+    public static void setBowVelocity(double desiredBowVelocity) {
+
+        bowVelocity = desiredBowVelocity;
+
+    }
+
     @EventHandler
     private void onEntityShootBow(EntityShootBowEvent event) {
 
@@ -18,7 +29,7 @@ public class BowBoost implements Listener {
 
             event.getProjectile().remove();
             entity.damage(0.1D, entity);
-            entity.setVelocity(entity.getLocation().getDirection().multiply(2).setY(0));
+            entity.setVelocity(entity.getLocation().getDirection().multiply(bowVelocity*32.2));
 
         }
     }

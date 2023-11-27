@@ -1,4 +1,4 @@
-name: RiftEssentialsPaper
+name: RiftEssentials
 version: '${project.version}'
 main: me.catto.rift.riftessentials.RiftEssentials
 api-version: '1.20'
@@ -33,3 +33,7 @@ commands:
   version:
     description: Shows plugin version
     usage: /version
+  riftessentials:
+    description: Admin command to fix values
+    usage: /riftessentials
+    permission: RiftEssentials.admin
